@@ -2,9 +2,9 @@ import React from "react";
 import { Text } from "react-native";
 import Manga from "./Manga";
 import { shallow } from "enzyme";
-import {manga} from '../../data/manga'
+import { manga } from "../../data/manga";
 
-describe("render", () => {
+describe("render Manga", () => {
   let render;
   beforeEach(() => {
     render = shallow(<Manga manga={manga} />);

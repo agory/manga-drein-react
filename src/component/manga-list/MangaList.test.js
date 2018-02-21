@@ -5,7 +5,7 @@ import { mangaList } from "../../data/manga";
 import MangaList from "./MangaList";
 import Manga from "../manga/Manga";
 
-describe("render", () => {
+describe("render Manga List", () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(<MangaList mangaList={mangaList} />);
