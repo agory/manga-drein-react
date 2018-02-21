@@ -3,7 +3,7 @@ import { Text } from "react-native";
 import Home from "./Home";
 import { shallow } from "enzyme";
 
-describe("render", () => {
+describe("render Home", () => {
   let render;
   beforeEach(() => {
     render = shallow(<Home />);
