@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const manga = ({ manga, minimal, children }) => {
+const Manga = ({ manga, minimal, children }) => {
   let moreContent = null;
   if (!minimal) {
     moreContent = (
@@ -76,7 +76,7 @@ const manga = ({ manga, minimal, children }) => {
   );
 };
 
-manga.propTypes = {
+Manga.propTypes = {
   manga: PropTypes.shape({
     title: PropTypes.string,
     description: PropTypes.string,
@@ -86,4 +86,4 @@ manga.propTypes = {
   minimal: PropTypes.bool
 };
 
-export default manga;
+export default Manga;
