@@ -1,61 +1,66 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { View, Text, Image, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    flexWrap: "wrap",
-    height: "100%",
-    width: "100%"
-  },
-  thumbnail: {
-    width: 120,
-    height: 120
-  },
-  list: {
-    flex: 1,
     flexDirection: "column",
     justifyContent: "space-between",
-    width: 190,
-    marginLeft: 10,
-    height: 125
-  },
-  description: {
-    width: "100%",
-    paddingTop: 10
-  },
-  card: {
     borderRadius: 2,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 1,
-    width: 400,
-    height: 300,
     padding: 30,
     margin: 5
   },
+  head: {
+    flex: 6,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    maxHeight: 100
+  },
+  thumbnail: {
+    flex: 3,
+    maxWidth: "100%",
+    height: "auto",
+    resizeMode: "stretch"
+  },
+  list: {
+    flex: 6,
+    flexDirection: "column",
+    justifyContent: "space-between"
+  },
+  description: {
+    paddingTop: 10,
+    flex: 8
+  },
   hr: {
     borderBottomColor: "#333",
-    borderBottomWidth: 0.5,
+    borderBottomWidth: 1,
     marginTop: 5,
     marginBottom: 5
   }
 });
 
-const manga = ({ manga }) => {
+const manga = ({ manga, minimal, children }) => {
+  let moreContent = null;
+  if (!minimal) {
+    moreContent = (
+      <View style={styles.description}>
+        <Text>{manga.description}</Text>
+      </View>
+    );
+  }
   return (
-    <View style={styles.card}>
-      <View style={styles.container}>
-        <View>
-          <Image
-            style={styles.thumbnail}
-            source={require("../../assets/images/book.png")}
-          />
-        </View>
+    <View style={styles.container}>
+      <View style={styles.head}>
+        <Image
+          style={styles.thumbnail}
+          source={require("../../assets/images/book.png")}
+        />
 
         <View style={styles.list}>
           <Text>{manga.title}</Text>
@@ -64,13 +69,21 @@ const manga = ({ manga }) => {
           <View style={styles.hr} />
           <Text>{manga.publishedDate}</Text>
         </View>
-
-        <View style={styles.description}>
-          <Text>{manga.description}</Text>
-        </View>
       </View>
+      {moreContent}
+      {children}
     </View>
   );
+};
+
+manga.propTypes = {
+  manga: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string,
+    authors: PropTypes.arrayOf(PropTypes.string),
+    publishedDate: PropTypes.string
+  }),
+  minimal: PropTypes.bool
 };
 
 export default manga;

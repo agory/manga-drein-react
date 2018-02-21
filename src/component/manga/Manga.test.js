@@ -41,4 +41,9 @@ describe("render", () => {
       render.contains(<Text>{manga.authors.join(" ")}</Text>)
     ).toBeTruthy();
   });
+
+  it("should not render description in minimal mode", () => {
+    render = shallow(<Manga manga={manga} minimal={true} />);
+    expect(render.contains(<Text>{manga.description}</Text>)).toBeFalsy();
+  });
 });
