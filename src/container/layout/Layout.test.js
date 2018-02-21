@@ -9,7 +9,8 @@ describe("Render Layout", () => {
     wrapper = shallow(<Layout />);
   });
 
-  it('render layout toolbar correctly', () => {
-      let toolbar = wrapper.find(Toolbar)
-  })
+  it("render layout toolbar correctly", () => {
+    let toolbar = wrapper.find(ToolbarAndroid);
+    expect(toolbar.prop("title")).toEqual("Manga Drein");
+  });
 });

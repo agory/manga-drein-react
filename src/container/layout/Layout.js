@@ -24,6 +24,10 @@ const styles = StyleSheet.create({
 });
 
 class componentName extends Component {
+  state = {
+    showSidebar: false
+  };
+
   actionHandler = event => {
     switch (action) {
       case 0:
@@ -33,7 +37,8 @@ class componentName extends Component {
   };
 
   iconHandler = () => {
-    console.log(event);
+    this.setState({ showSidebar: !this.state.showSidebar });
+    console.log(this.state.showSidebar);
   };
 
   render() {
