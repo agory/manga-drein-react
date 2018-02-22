@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { mangaList } from "../../data/manga";
 import MangaList from "../../component/manga-list/MangaList";
 
-class Search extends React.Component {
+class SearchScreen extends React.Component {
   state = {
     text: "",
     mangaList: mangaList
@@ -25,6 +25,6 @@ class Search extends React.Component {
   }
 }
 
-Search.propTypes = {};
+SearchScreen.propTypes = {};
 
-export default Search;
+export default SearchScreen;
