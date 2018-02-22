@@ -1,6 +1,6 @@
 import React from "react";
 import { Text } from "react-native";
-import Home from "./Home";
+import { Home } from "./Home";
 import { shallow } from "enzyme";
 
 describe("render Home", () => {

@@ -1,7 +1,8 @@
 import React from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
-import MangaList from "../../component/manga-list/MangaList";
-import { mangaList } from "../../data/manga";
+import { StackNavigator } from "react-navigation";
+import Manga from "../../component/manga/Manga";
+import { manga } from "../../data/manga";
 
 const styles = StyleSheet.create({
   container: {
@@ -9,14 +10,20 @@ const styles = StyleSheet.create({
   }
 });
 
-export default class Home extends React.Component {
+export class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Text>Welcome to Manga drein app with react native</Text>
 
-        <MangaList mangaList={mangaList} />
+        <Manga manga={manga} />
       </View>
     );
   }
 }
+
+export default StackNavigator({
+  Home: {
+    screen: Home
+  }
+});
