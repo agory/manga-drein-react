@@ -29,7 +29,7 @@ class componentName extends Component {
   };
 
   actionHandler = event => {
-    switch (action) {
+    switch (event) {
       case 0:
         console.log("Action : Setting");
         break;
