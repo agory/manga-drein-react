@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export class Home extends React.Component {
+export default class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
@@ -21,9 +21,3 @@ export class Home extends React.Component {
     );
   }
 }
-
-export default StackNavigator({
-  Home: {
-    screen: Home
-  }
-});
