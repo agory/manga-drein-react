@@ -1,12 +1,12 @@
 import React from "react";
 import { Text } from "react-native";
-import Home from "./Home";
+import HomeScreen from "./HomeScreen";
 import { shallow } from "enzyme";
 
 describe("render Home", () => {
   let render;
   beforeEach(() => {
-    render = shallow(<Home />);
+    render = shallow(<HomeScreen />);
   });
 
   // first but not useful

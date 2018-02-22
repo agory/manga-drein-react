@@ -1,17 +1,17 @@
 import { StackNavigator } from "react-navigation";
-import Home from "./container/home/Home";
-import Search from "./container/search/Search";
+import HomeScreen from "./container/home/HomeScreen";
+import SearchScreen from "./container/search/SearchScreen";
 
-export default RootStack = StackNavigator(
+export default (RootStack = StackNavigator(
   {
     Home: {
-      screen: Home
+      screen: HomeScreen
     },
     Search: {
-      screen: Search
+      screen: SearchScreen
     }
   },
   {
     initialRouteName: "Home"
   }
-);
+));

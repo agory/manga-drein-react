@@ -1,6 +1,6 @@
 import React from "react";
 import { TextInput } from "react-native";
-import Search from "./Search";
+import SearchScreen from "./SearchScreen";
 import { shallow } from "enzyme";
 import MangaList from "../../component/manga-list/MangaList";
 import { mangaList } from "../../data/manga";
@@ -8,7 +8,7 @@ import { mangaList } from "../../data/manga";
 describe("render Search", () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<Search />);
+    wrapper = shallow(<SearchScreen />);
   });
 
   it("should render text input empty", () => {
