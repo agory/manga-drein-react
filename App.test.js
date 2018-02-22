@@ -1,9 +1,12 @@
-import React from 'react';
-import App from './App';
+import React from "react";
+import App from "./App";
+import RootStack from "./src/RootStack";
+import { shallow } from "enzyme";
 
-import renderer from 'react-test-renderer';
-
-it('renders without crashing', () => {
-  const rendered = renderer.create(<App />).toJSON();
-  expect(rendered).toBeTruthy();
+describe("render App", () => {
+  it("should render RootStack", () => {
+    const wrapper = shallow(<App />);
+    const rootStack = wrapper.find(RootStack);
+    expect(rootStack).toHaveLength(1);
+  });
 });

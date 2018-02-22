@@ -29,4 +29,5 @@ describe("render Manga", () => {
     render = shallow(<Manga manga={manga} minimal={true} />);
     expect(render.contains(<Text>{manga.description}</Text>)).toBeFalsy();
   });
+
 });
