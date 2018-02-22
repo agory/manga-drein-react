@@ -3,7 +3,7 @@ import { TextInput } from "react-native";
 import SearchScreen from "./SearchScreen";
 import { shallow } from "enzyme";
 import MangaList from "../../component/manga-list/MangaList";
-import { mangaList } from "../../data/manga";
+import { MANGA_LIST } from "../../data/manga";
 
 describe("render Search", () => {
   let wrapper;
@@ -18,7 +18,6 @@ describe("render Search", () => {
 
   it("should render a mangaList with mangaList data", () => {
     const list = wrapper.find(MangaList);
-    console.log(list);
-    expect(list.prop("mangaList")).toEqual(mangaList);
+    expect(list.prop("mangaList")).toEqual(MANGA_LIST);
   });
 });

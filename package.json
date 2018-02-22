@@ -17,12 +17,13 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "test": "node node_modules/jest/bin/jest.js",
-    "android-linux":
-      "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
+    "android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
   },
   "jest": {
     "preset": "react-native",
-    "setupFiles": ["<rootDir>/setup/enzyme.js"],
+    "setupFiles": [
+      "<rootDir>/setup/enzyme.js"
+    ],
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/(?!(jest-)?react-native|react-navigation)"
     ]
@@ -31,6 +32,7 @@
     "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-native": "0.52.0",
-    "react-navigation": "^1.1.2"
+    "react-navigation": "^1.1.2",
+    "rxjs": "^5.5.6"
   }
 }

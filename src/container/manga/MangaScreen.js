@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TextInput } from "react-native";
 import PropTypes from "prop-types";
-import { manga } from "../../data/manga";
+import { MANGA } from "../../data/manga";
 import Manga from "../../component/manga/Manga";
 
 class MangaScreen extends React.Component {
@@ -12,7 +12,7 @@ class MangaScreen extends React.Component {
   componentDidMount() {
     const id = this.props.navigation.state.mangaId;
     // TODO find manga by id
-    this.setState({ manga: manga });
+    this.setState({ manga: MANGA });
   }
 
   render() {

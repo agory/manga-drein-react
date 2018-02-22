@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FlatList } from "react-native";
 import Manga from "../manga/Manga";
-import { manga } from "../../data/manga";
+import { MANGA } from "../../data/manga";
 
 const MangaList = ({ mangaList }) => {
   return (

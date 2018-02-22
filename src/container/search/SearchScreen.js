@@ -1,13 +1,13 @@
 import React from "react";
 import { View, TextInput } from "react-native";
 import PropTypes from "prop-types";
-import { mangaList } from "../../data/manga";
+import { MANGA_LIST } from "../../data/manga";
 import MangaList from "../../component/manga-list/MangaList";
 
 class SearchScreen extends React.Component {
   state = {
     text: "",
-    mangaList: mangaList
+    mangaList: MANGA_LIST
   };
 
   searchHandler = text => {

@@ -1,0 +1,17 @@
+import { MANGA_LIST } from "../data/manga";
+import { Observable } from "rxjs/Observable";
+import "rxjs/add/observable/of";
+import "rxjs/add/operator/map";
+
+export function fetchManga(id) {
+  const manga = MANGA_LIST.find(manga => manga.id === id);
+  return Observable.of(manga);
+}
+
+export function fetchSearchManga(title) {
+  const list = MANGA_LIST.filter(manga => {
+    const bool = manga.title.includes(title);
+    return bool;
+  });
+  return Observable.of(list);
+}

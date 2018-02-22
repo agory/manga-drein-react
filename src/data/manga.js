@@ -1,6 +1,6 @@
 let id = 0;
 
-export const manga = {
+export const MANGA = {
   isbn: "2723442276",
   retailPrice: {
     amount: "",
@@ -18,7 +18,7 @@ export const manga = {
   }
 };
 
-export const mangaList = [
+export const MANGA_LIST = [
   {
     isbn: "2723442276",
     retailPrice: {
