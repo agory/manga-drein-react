@@ -21,10 +21,7 @@ const RootStack = StackNavigator(
 
 export default class App extends React.Component {
   render() {
-    return (
-      <Layout>
-        <RootStack />
-      </Layout>
-    );
+    
+    return <RootStack />;
   }
 }
