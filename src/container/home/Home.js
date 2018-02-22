@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
-import MangaList from "../../component/manga-list/MangaList";
-import { mangaList } from "../../data/manga";
+import { StackNavigator } from "react-navigation";
+import Manga from "../../component/manga/Manga";
 
 const styles = StyleSheet.create({
   container: {
@@ -10,12 +10,17 @@ const styles = StyleSheet.create({
 });
 
 export default class Home extends React.Component {
+  searchHandler = () => {
+    this.props.navigation.navigate("Search");
+  };
+
   render() {
+    console.log(this.props);
+
     return (
       <View style={styles.container}>
         <Text>Welcome to Manga drein app with react native</Text>
-
-        <MangaList mangaList={mangaList} />
+        <Button title="Search" onPress={this.searchHandler} />
       </View>
     );
   }
