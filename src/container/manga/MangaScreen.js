@@ -6,13 +6,15 @@ import Manga from "../../component/manga/Manga";
 import { fetchManga } from "../../service/MangaService";
 
 class MangaScreen extends React.Component {
+  static navigationOptions = {};
+
   state = {
     manga: null
   };
 
   componentDidMount() {
     const id = this.props.navigation.state.params.mangaId;
-    console.log("@MangaScreen-componentDidMount :", id);
+    // console.log("@MangaScreen-componentDidMount :", id);
 
     fetchManga(id).subscribe(manga => {
       this.setState({ manga });

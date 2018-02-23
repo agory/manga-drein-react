@@ -165,6 +165,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/agory/Project/manga-drein-react/android/app/build/intermediates/exploded-aar/mangadrein/react-native-vector-icons/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8065a43b1a868d17519e67d7651e13a99862d3ce">
+        <dex dex="/home/agory/Project/manga-drein-react/android/app/build/intermediates/pre-dexed/debug/mangadrein-react-native-vector-icons-unspecified_48ee795465507afee857db35e5e9354de4c4a441.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/agory/Project/manga-drein-react/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
         jumboMode="false"
         optimize="true"

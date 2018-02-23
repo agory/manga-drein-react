@@ -6,6 +6,11 @@ import MangaList from "../../component/manga-list/MangaList";
 import { fetchSearchManga } from "../../service/MangaService";
 
 class SearchScreen extends React.Component {
+  static navigationOptions = {
+    drawerLabel: "Search",
+    title: "Search"
+  };
+
   state = {
     text: "",
     mangaList: []
