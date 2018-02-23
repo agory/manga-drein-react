@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between"
   },
   description: {
-    paddingTop: 10,
+    paddingTop: 20,
     flex: 8
   },
   hr: {

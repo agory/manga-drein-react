@@ -1,8 +1,9 @@
 import React from "react";
-import { View, TextInput } from "react-native";
+import { View, TextInput, Text } from "react-native";
 import PropTypes from "prop-types";
 import { MANGA } from "../../data/manga";
 import Manga from "../../component/manga/Manga";
+import { fetchManga } from "../../service/MangaService";
 
 class MangaScreen extends React.Component {
   state = {
@@ -10,13 +11,20 @@ class MangaScreen extends React.Component {
   };
 
   componentDidMount() {
-    const id = this.props.navigation.state.mangaId;
-    // TODO find manga by id
-    this.setState({ manga: MANGA });
+    const id = this.props.navigation.state.params.mangaId;
+    console.log("@MangaScreen-componentDidMount :", id);
+
+    fetchManga(id).subscribe(manga => {
+      this.setState({ manga });
+    });
   }
 
   render() {
-    return <Manga manga={this.state.manga} />;
+    if (this.state.manga) {
+      return <Manga manga={this.state.manga} />;
+    } else {
+      return <Text>Loading ...</Text>;
+    }
   }
 }
 

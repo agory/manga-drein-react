@@ -9,7 +9,7 @@ export function fetchManga(id) {
 }
 
 export function fetchSearchManga(title) {
-  console.log("fetchSearchManga is call");
+  // console.log("fetchSearchManga is call");
   const list = MANGA_LIST.filter(manga => {
     const bool = manga.title.toLowerCase().includes(title.toLowerCase());
     return bool;
