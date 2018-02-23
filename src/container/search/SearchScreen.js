@@ -13,7 +13,6 @@ class SearchScreen extends React.Component {
 
   searchHandler = text => {
     // console.log("@Search-searchHandler :", text);
-
     this.setState({ text: text });
     if (!text) {
       return this.setState({ mangaList: [] });
@@ -28,16 +27,16 @@ class SearchScreen extends React.Component {
   };
 
   onClickHandler = manga => {
-    console.log("@Search-onClickHandler :", manga);
+    // console.log("@Search-onClickHandler :", manga);
     this.props.navigation.navigate("Manga", {
       mangaId: manga.id
     });
   };
 
   render() {
-    let mangaList = null;
+    let mangaListComponent = null;
     if (this.state.mangaList) {
-      mangaList = (
+      mangaListComponent = (
         <MangaList
           mangaList={this.state.mangaList}
           onClick={this.onClickHandler}
@@ -47,7 +46,7 @@ class SearchScreen extends React.Component {
     return (
       <View>
         <TextInput onChangeText={this.searchHandler} value={this.state.text} />
-        {mangaList}
+        {mangaListComponent}
       </View>
     );
   }

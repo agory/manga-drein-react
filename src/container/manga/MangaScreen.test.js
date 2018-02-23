@@ -10,7 +10,9 @@ describe("render MangaScreen", () => {
   beforeEach(() => {
     wrapper = shallow(
       <MangaScreen
-        navigation={{ state: { mangaId: "5a8fe815ed77d9a67a67f7cb" } }}
+        navigation={{
+          state: { params: { mangaId: "5a8fe815ed77d9a67a67f7cb" } }
+        }}
       />
     );
   });
