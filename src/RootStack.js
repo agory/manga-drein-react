@@ -29,7 +29,8 @@ export default (RootStack = StackNavigator(
   },
   {
     initialRouteName: "MainStack",
-    navigationOptions:  ({ navigation }) => ({
+    navigationOptions: ({ navigation }) => ({
+      title: "Manga Drein",
       headerStyle: {
         backgroundColor: "#a3311e"
       },

@@ -6,7 +6,7 @@ import Manga from "../../component/manga/Manga";
 import { fetchManga } from "../../service/MangaService";
 
 class MangaScreen extends React.Component {
-
+  static navigationOptions = {};
 
   state = {
     manga: null
