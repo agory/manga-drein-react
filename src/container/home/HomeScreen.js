@@ -10,8 +10,17 @@ const styles = StyleSheet.create({
 });
 
 export default class HomeScreen extends React.Component {
+  static navigationOptions = {
+    drawerLabel: "Home",
+    title: "Home"
+  };
+
   searchHandler = () => {
     this.props.navigation.navigate("Search");
+  };
+
+  toggleDrawerHandler = () => {
+    this.props.navigation.navigate("DrawerToggle");
   };
 
   render() {
@@ -19,6 +28,7 @@ export default class HomeScreen extends React.Component {
       <View style={styles.container}>
         <Text>Welcome to Manga drein app with react native</Text>
         <Button title="Search" onPress={this.searchHandler} />
+        <Button title="Toggle drawer" onPress={this.toggleDrawerHandler} />
       </View>
     );
   }

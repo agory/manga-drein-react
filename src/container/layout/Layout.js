@@ -13,12 +13,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column"
   },
-  toolbar: {
-    height: 60,
-    marginTop: 24,
-    backgroundColor: "rgba(56, 95, 170, 1)"
-  },
   children: {
+    marginTop: 24,
     flex: 1
   }
 });
@@ -46,23 +42,8 @@ class componentName extends Component {
       <View style={styles.container}>
         <StatusBar
           translucent
-          backgroundColor="rgba(56, 95, 170, 0.50)"
+          backgroundColor="rgba(126, 35, 30, 1)"
           animated
-        />
-        <ToolbarAndroid
-          onActionSelected={this.actionHandler}
-          onIconClicked={this.iconHandler}
-          style={styles.toolbar}
-          title="Manga Drein"
-          titleColor="#fff"
-          navIcon={require("../../assets/images/icons/menu_36px.png")}
-          actions={[
-            {
-              title: "Settings",
-              icon: require("../../assets/images/icons/settings.png"),
-              show: "ifRoom"
-            }
-          ]}
         />
         <View style={styles.children}>{this.props.children}</View>
       </View>
