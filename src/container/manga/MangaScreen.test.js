@@ -8,7 +8,11 @@ import { MANGA } from "../../data/manga";
 describe("render MangaScreen", () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<MangaScreen navigation={{ state: { mangaId: 1 } }} />);
+    wrapper = shallow(
+      <MangaScreen
+        navigation={{ state: { mangaId: "5a8fe815ed77d9a67a67f7cb" } }}
+      />
+    );
   });
 
   it("should render a manga", () => {
