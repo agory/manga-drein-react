@@ -12,13 +12,15 @@ class SearchScreen extends React.Component {
   };
 
   searchHandler = text => {
-    this.setState({ text });
+    console.log("@Search-searchHandler :", text);
+
+    this.setState({ text: text });
     fetchSearchManga(text).subscribe(
       list => {
-        console.log(list);
+        console.log("@Search-searchHandler :", list);
         this.setState({ mangaList: list });
       },
-      error => console.error(error)
+      error => console.error("@Search-searchHandler :", error)
     );
   };
 

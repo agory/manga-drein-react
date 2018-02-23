@@ -29,8 +29,10 @@ describe("test MangaService fetchSearchManga", () => {
   });
 
   it("should return an all item", () => {
-    MangaService.fetchSearchManga("death").subscribe(list =>
-      expect(list).toEqual(MANGA_LIST)
+    MangaService.fetchSearchManga("est").subscribe(list =>
+      expect(list).toEqual(
+        MANGA_LIST.filter(manga => manga.title.includes("est"))
+      )
     );
   });
 });

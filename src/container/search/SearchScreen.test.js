@@ -23,8 +23,11 @@ describe("render Search", () => {
 
   it("should render a mangaList with all manga", () => {
     const input = wrapper.find(TextInput);
-    input.simulate("change", { target: { value: "death" } });
+    input.simulate("changeText", "est");
     const list = wrapper.find(MangaList);
-    expect(wrapper.state("text")).toEqual("death");
+    expect(wrapper.state("text")).toEqual("est");
+    expect(list.prop("mangaList")).toEqual(
+      MANGA_LIST.filter(manga => manga.title.includes("est"))
+    );
   });
 });
