@@ -3,16 +3,23 @@ import { View, TextInput } from "react-native";
 import PropTypes from "prop-types";
 import { MANGA_LIST } from "../../data/manga";
 import MangaList from "../../component/manga-list/MangaList";
+import { fetchSearchManga } from "../../service/MangaService";
 
 class SearchScreen extends React.Component {
   state = {
     text: "",
-    mangaList: MANGA_LIST
+    mangaList: []
   };
 
   searchHandler = text => {
     this.setState({ text });
-    // TODO Update Manga List
+    fetchSearchManga(text).subscribe(
+      list => {
+        console.log(list);
+        this.setState({ mangaList: list });
+      },
+      error => console.error(error)
+    );
   };
 
   render() {
